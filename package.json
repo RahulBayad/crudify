@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "mongoose": "^7.5.3",
@@ -8,10 +9,9 @@
   "name": "crudify",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "build":"npm run build",
-    "start":"node index.js"
+    "build": "npm run build",
+    "start": "node index.js"
   },
   "author": "Rahul Bayad",
   "license": "ISC",

@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const dotenv = require("dotenv")
     
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -14,7 +15,7 @@ app.get('/index', (req, res) => {
 });
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/e-comm');
+mongoose.connect(process.env.MONGODB_URL);
 const productSchema = new mongoose.Schema({
     item:String,
     type:String,
@@ -41,7 +42,7 @@ const Product = mongoose.model('products',productSchema);
             }else{
                 var result = await Product.find({item : {$regex : new RegExp(`^${searchRequest}$` , "i")} });
             }
-            res.send(result); 
+            res.send(result);
     });
     
     app.delete('/deleteData',async (req, res) => {
@@ -69,6 +70,6 @@ const Product = mongoose.model('products',productSchema);
         res.send(result);
     });
     
-    app.listen(5000,()=>{
-        console.log("server connected at port 5000")
+    app.listen(process.env.PORT || 5001,()=>{
+        console.log(`server connected at port ${process.env.PORT || 5001}`)
     });
