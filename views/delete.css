@@ -1,0 +1,78 @@
+.operation #delete{
+    padding: 11px 10px;
+    border: 1px solid rgb(150, 150, 150);
+    border-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    /* color: rgb(94, 94, 94); */
+    color: black;
+    font-size: 15px;
+    position: relative;
+    top: 3px;
+    /* background-color: #e5e8ff; */
+    background-color: #fff;
+}
+
+
+.search{
+    display: flex;
+    position: relative;
+    /* right: 0px; */
+    float: right;
+    margin:5px 108px;
+}
+.search input{
+    width: 300px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding-left: 20px;
+}
+.search button{
+    padding: 5px 20px;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 0.5px;
+    border: 1px solid gray;
+    outline: none;
+    background-color:rgb(60, 46, 255) ;
+}
+
+#dataTable{
+    border-collapse:collapse;
+    margin-left: 40px;
+    width: 90%;
+}
+
+#dataTable tr{
+    height: 30px;
+}
+
+#dataTable tr:nth-child(1){
+    background-color: rgb(60, 46, 255);
+    text-align: center;
+    font-size: 17px;
+    height: 40px;
+    color: white;
+}
+
+#dataTable td:nth-child(1){
+    text-align: center;
+}
+#dataTable td:nth-child(2){
+    text-align: center;
+}
+#dataTable td:nth-child(3){
+    /* text-align: center; */
+    padding-left: 40px;
+}
+#dataTable td:nth-child(4){
+    text-align: center;
+}
+#dataTable td:nth-child(5){
+    text-align: center;
+}
+#dataTable td:nth-child(6){
+    text-align: center;
+    font-weight: 300;
+}

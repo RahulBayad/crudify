@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Data</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./insert.css">
+</head>
+<body>
+    
+    <div class="header">
+            
+    </div>
+    <div class="operation">
+        <a href="/index"><button id="insert">Insert Data</button></a>
+        <a href="/read_data"><button id="read">Fetch Data</button></a>
+        <a href="/update"><button id="update">Update Data</button></a>
+        <!-- <a href="/delete"><button id="delete">Delete Data</button></a> -->
+    </div>
+    <div class="container1"><br><br>
+        <form id="insertForm" action="">
+            <div id="input">
+                <label for="productName">Product Name : </label>
+                <input type="text" id="productName" >
+            </div><br>
+            <div id="input">
+                <label for="productType">Type : </label>
+                <input type="text" id="productType" >
+            </div><br>
+            <div id="input">
+                <label for="productPrice">Price : </label>
+                <input type="text" id="productPrice" >
+            </div><br><br>
+            <input type="submit" id="submit" value="Insert">
+            <br><br>
+        </form><br><br>
+    </div>
+</body>
+<script>
+    
+    document.getElementById('submit').addEventListener('click',(e)=>{
+        e.preventDefault();
+        let obj = {
+            item : document.getElementById('productName').value,
+            type : document.getElementById('productType').value,
+            price : document.getElementById('productPrice').value
+        }
+        console.log(obj);
+        fetch('/insertData',{
+            method :'POST',
+            headers : {'Content-type' : 'application/json'},
+            body : JSON.stringify(obj)
+        }).then((response) => {
+            alert('Data Inserted Successfully !!!')
+        })
+        
+    })
+</script>
+
+</html>

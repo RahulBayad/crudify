@@ -1,0 +1,50 @@
+.operation #insert{
+    padding: 11px 10px;
+    border: 1px solid rgb(150, 150, 150);;
+    /* border: 1px solid black; */
+    border-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    /* color: rgb(94, 94, 94); */
+    color: black;
+    font-size: 15px;
+    position: relative;
+    top: 3px;
+    /* background-color: #e5e8ff; */
+    background-color: #fff;
+}
+#insertForm{
+    margin-top: 20px;
+    padding: 0 20px;
+    flex-direction: column;
+}
+#insertForm #input{
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    /* color: gray; */
+    flex-direction: column; 
+}
+
+#insertForm #input input{
+    padding-left: 10px;
+    height: 30px;
+    width: 400px;
+    border-radius: 8px;
+    border: 1px solid rgb(203, 203, 203);
+}
+
+
+#insertForm input[type="submit"]{
+    width: 100px;
+    color: white;
+    background-color: rgb(60, 46, 255);
+    border: 1px solid rgb(163, 163, 163);
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
