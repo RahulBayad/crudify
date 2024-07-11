@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const dotenv = require("dotenv")
+require("dotenv").config()
     
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -15,7 +15,13 @@ app.get('/index', (req, res) => {
 });
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URL);
+
+mongoose.connect(process.env.MONGODB_URL).then(()=>{
+    console.log("Connected to mongodb database")
+}).catch(()=>{
+    console.log("Error connecting to mongodb database")
+});
+
 const productSchema = new mongoose.Schema({
     item:String,
     type:String,
