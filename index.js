@@ -16,7 +16,8 @@ app.get('/index', (req, res) => {
 
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URL).then(()=>{
+const db = mongoose.connect(process.env.MONGODB_URL)
+db.then(()=>{
     console.log("Connected to mongodb database")
 }).catch(()=>{
     console.log("Error connecting to mongodb database")
